@@ -1,7 +1,7 @@
 {
   "name": "nce-dummy",
   "version": "0.0.1",
-  "description": "A dummy extension for the nc cms",
+  "description": "A dummy extension for the nce cms",
   "main": "dummy.js",
   "scripts": {
     "test": "mocha"
@@ -25,7 +25,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "nc":">=0.0.1"
+    "nce":">=0.0.1"
   },
   "peerDependencies": {
   }
