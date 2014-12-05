@@ -11,6 +11,14 @@ module.exports = function(cms){
     ext.config.route = ext.config.route || "/"+ext.name;
 
     //# Declarations and settings:
+    
+    /* nce-mongoose-store
+    var store = cms.getExtension("mongoose-store");
+    var schema = store.createSchema({});
+    schema.methods.xy = function(){};
+    schema.statics.xy = function(cb){cb();};
+    ext.model = store.createModel(schema);
+    */
   });
   
   ext.on("uninstall", function(event){ // undo installation
