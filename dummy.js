@@ -9,8 +9,14 @@ module.exports = function(cms){
   ext.on("install", function(event){ // set options, but don't run or make available in cms
     //# Seting extension-config:
     ext.config.route = ext.config.route || "/"+ext.name;
+    /* nce-winston
+    ext.config.logger = ext.config.logger || {};
+    */
 
     //# Declarations and settings:
+    /* nce-winston
+    ext.logger = cms.getExtension("winston").createLogger(ext.name, ext.config.logger);
+    */
     
     /* nce-mongoose-store
     var store = cms.getExtension("mongoose-store");
