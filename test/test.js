@@ -30,4 +30,21 @@ describe('Basic functions in NCE', function(){
     if(ext.uninstall()) return done();
     return done(new Error("Can not uninstall extension"));
   });
+  
+  it('should be installable again', function(done){
+    if(ext.install()) return done();
+    return done(new Error("Can not install extension"));
+  });
+  it('should be activatable again', function(done){
+    if(ext.activate()) return done();
+    return done(new Error("Can not activate extension"));
+  });
+  it('should be deactivatable again', function(done){
+    if(ext.deactivate()) return done();
+    return done(new Error("Can not deactivate extension"));
+  });
+  it('should be uninstallable again', function(done){
+    if(ext.uninstall()) return done();
+    return done(new Error("Can not uninstall extension"));
+  });
 });
