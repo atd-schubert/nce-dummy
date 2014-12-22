@@ -9,6 +9,9 @@ module.exports = function(cms){
   ext.on("install", function(event){ // set options, but don't run or make available in cms
     //# Seting extension-config:
     ext.config.route = ext.config.route || "/"+ext.name;
+    /* nce-mongoose-store
+    ext.config.modelName = ext.config.modelName || ext.name;
+    */
     /* nce-winston
     ext.config.logger = ext.config.logger || {};
     */
