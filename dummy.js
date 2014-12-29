@@ -32,7 +32,9 @@ module.exports = function(cms){
   
   ext.on("uninstall", function(event){ // undo installation
     //# Undeclare:
-    
+    /* nce-winston
+    cms.getExtension("winston").removeLogger(ext.name);
+    */
   });
   
   ext.on("activate", function(event){ // don't set options, just run, make available in cms or register.
