@@ -15,6 +15,11 @@ module.exports = function(nce){
     /* nce-winston
     ext.config.logger = ext.config.logger || {};
     */
+    /* nce-i18n
+    ext.config.i18n = ext.config.i18n || {};
+    ext.config.i18n.dictionary = ext.config.i18n.dictionary || require("./i18n");
+    ext.config.i18n.defaultLanguage = ext.config.i18n.defaultLanguage || "en";
+    */
 
     //# Declarations and settings:
     /* nce-winston
@@ -28,6 +33,11 @@ module.exports = function(nce){
     schema.statics.xy = function(cb){cb();};
     ext.model = store.createModel(ext.config.modelName, schema);
     */
+    /* nce-i18n
+    var i18n = nce.getExtension("i18n");
+    i18n.createDictionary(ext.name, ext.config.dictionary, ext.config.defaultLanguage );
+    */
+    checkAuthentication = function(req, res, authCb, unauthCb, opts)
   });
   
   ext.on("uninstall", function(event){ // undo installation
@@ -39,6 +49,9 @@ module.exports = function(nce){
     /* nce-mongoose-store
     store.removeModel(ext.config.modelName);
     delete ext.model;
+    */
+    /* nce-i18n
+    nce.getExtension("i18n").removeDictionary(ext.name);
     */
   });
   
