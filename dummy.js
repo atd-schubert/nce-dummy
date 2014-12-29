@@ -20,6 +20,10 @@ module.exports = function(nce){
     ext.config.i18n.dictionary = ext.config.i18n.dictionary || require("./i18n");
     ext.config.i18n.defaultLanguage = ext.config.i18n.defaultLanguage || "en";
     */
+    /* nce-user
+    ext.config.user = ext.config.user || {};
+    ext.config.user.onlyAllow = ext.user.onlyAllow || {usergroup:"admin", user:"admin"};
+    */
 
     //# Declarations and settings:
     /* nce-winston
@@ -69,9 +73,21 @@ module.exports = function(nce){
   
 //# Private declarations:
   var router = function(req, res, next){
-    var backend = nce.getExtension("backend");
     if(req.url.substr(0, backend.config.route.length+ext.config.subRoute.length) === backend.config.route+ext.config.subRoute) {
       try{throw new Error("Dummy extension");} catch(e){console.error(e)};
+
+      /* nce-user
+      var authCb = function(err, user){
+        if(err) return next(err);
+        // Your logic here...
+      };
+      var unauthCb = function(err, user){
+        // Not authorized
+        if(err) return next(err);
+        // Your logic here...
+      };
+      return nce.getExtension("user").checkAuthentication(req, res, authCb, unauthCb, ext.config.user.onlyAllow);
+      */
     }
 
     return next();
