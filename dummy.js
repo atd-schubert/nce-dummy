@@ -26,7 +26,7 @@ module.exports = function(nce){
     var schema = store.createSchema({});
     schema.methods.xy = function(){};
     schema.statics.xy = function(cb){cb();};
-    ext.model = store.createModel(schema);
+    ext.model = store.createModel(ext.config.modelName, schema);
     */
   });
   
@@ -34,6 +34,10 @@ module.exports = function(nce){
     //# Undeclare:
     /* nce-winston
     nce.getExtension("winston").removeLogger(ext.name);
+    */
+    /* nce-mongoose-store
+    store.removeModel(ext.config.modelName);
+    delete ext.model;
     */
   });
   
