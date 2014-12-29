@@ -34,6 +34,7 @@ module.exports = function(nce){
     //# Undeclare:
     /* nce-winston
     nce.getExtension("winston").removeLogger(ext.name);
+    delete ext.logger;
     */
     /* nce-mongoose-store
     store.removeModel(ext.config.modelName);
