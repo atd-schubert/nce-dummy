@@ -1,12 +1,12 @@
 "use strict";
 
-module.exports = function(cms){
-  if(!cms) throw new Error("You have to specify the cms object");
+module.exports = function(nce){
+  if(!nce) throw new Error("You have to specify the nce object");
   
 //# Mandantory Setup:
-  var ext = cms.createExtension({package: require("./package.json")});
+  var ext = nce.createExtension({package: require("./package.json")});
   
-  ext.on("install", function(event){ // set options, but don't run or make available in cms
+  ext.on("install", function(event){ // set options, but don't run or make available in nce
     //# Seting extension-config:
     ext.config.route = ext.config.route || "/"+ext.name;
     /* nce-mongoose-store
@@ -18,11 +18,11 @@ module.exports = function(cms){
 
     //# Declarations and settings:
     /* nce-winston
-    ext.logger = cms.getExtension("winston").createLogger(ext.name, ext.config.logger);
+    ext.logger = nce.getExtension("winston").createLogger(ext.name, ext.config.logger);
     */
     
     /* nce-mongoose-store
-    var store = cms.getExtension("mongoose-store");
+    var store = nce.getExtension("mongoose-store");
     var schema = store.createSchema({});
     schema.methods.xy = function(){};
     schema.statics.xy = function(cb){cb();};
@@ -33,25 +33,25 @@ module.exports = function(cms){
   ext.on("uninstall", function(event){ // undo installation
     //# Undeclare:
     /* nce-winston
-    cms.getExtension("winston").removeLogger(ext.name);
+    nce.getExtension("winston").removeLogger(ext.name);
     */
   });
   
-  ext.on("activate", function(event){ // don't set options, just run, make available in cms or register.
-	  if(cms.requestMiddlewares.indexOf(router) === -1) {
-		  cms.requestMiddlewares.push(router);
+  ext.on("activate", function(event){ // don't set options, just run, make available in nce or register.
+	  if(nce.requestMiddlewares.indexOf(router) === -1) {
+		  nce.requestMiddlewares.push(router);
 	  }
   });
   
   ext.on("deactivate", function(event){ // undo activation
-	  if(cms.requestMiddlewares.indexOf(router) !== -1) {
-		  cms.requestMiddlewares.splice(cms.requestMiddlewares.indexOf(router), 1);
+	  if(nce.requestMiddlewares.indexOf(router) !== -1) {
+		  nce.requestMiddlewares.splice(nce.requestMiddlewares.indexOf(router), 1);
 	  }
   });
   
 //# Private declarations:
   var router = function(req, res, next){
-    var backend = cms.getExtension("backend");
+    var backend = nce.getExtension("backend");
     if(req.url.substr(0, backend.config.route.length+ext.config.subRoute.length) === backend.config.route+ext.config.subRoute) {
       try{throw new Error("Dummy extension");} catch(e){console.error(e)};
     }
