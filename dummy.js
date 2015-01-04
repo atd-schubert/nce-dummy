@@ -38,8 +38,13 @@ module.exports = function(nce){
     ext.model = store.createModel(ext.config.modelName, schema);
     */
     /* nce-i18n
-    var i18n = nce.getExtension("i18n");
-    i18n.createDictionary(ext.name, ext.config.dictionary, ext.config.defaultLanguage );
+    nce.getExtension("i18n").createDictionary(ext.name, ext.config.i18n.dictionary, ext.config.i18n.defaultLanguage );
+    */
+    /* nce-amd
+    var amd = nce.getExtension("amd");
+    amd.define({{js-name}}, {{code}}, function(err){
+      if(err) ext.logger.error("Error defining amd", err);
+    });
     */
     checkAuthentication = function(req, res, authCb, unauthCb, opts)
   });
@@ -56,6 +61,13 @@ module.exports = function(nce){
     */
     /* nce-i18n
     nce.getExtension("i18n").removeDictionary(ext.name);
+    */
+    /* nce-amd
+    // Be carefull with this statement!
+    var amd = nce.getExtension("amd");
+    amd.undefine({{js-name}}, function(err){
+      if(err) ext.logger.error("Error undefining amd", err);
+    });
     */
   });
   
