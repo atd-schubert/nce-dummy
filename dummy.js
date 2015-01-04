@@ -22,7 +22,7 @@ module.exports = function(nce){
     */
     /* nce-user
     ext.config.user = ext.config.user || {};
-    ext.config.user.onlyAllow = ext.user.onlyAllow || {usergroup:"admin", user:"admin"};
+    ext.config.user.onlyAllow = ext.config.user.onlyAllow || {usergroup:"admin", user:"admin"};
     */
 
     //# Declarations and settings:
