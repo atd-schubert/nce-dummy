@@ -1,5 +1,7 @@
 "use strict";
 
+var fs = require("fs");
+
 module.exports = function(nce){
   if(!nce) throw new Error("You have to specify the nce object");
   
@@ -42,7 +44,7 @@ module.exports = function(nce){
     */
     /* nce-amd
     var amd = nce.getExtension("amd");
-    amd.define({{js-name}}, {{code}}, function(err){
+    amd.define(ext.name, fs.readFileSync(__dirname + "/assets/script.js"), function(err){
       if(err) ext.logger.error("Error defining amd", err);
     });
     */
@@ -64,7 +66,7 @@ module.exports = function(nce){
     /* nce-amd
     // Be carefull with this statement!
     var amd = nce.getExtension("amd");
-    amd.undefine({{js-name}}, function(err){
+    amd.undefine(ext.name, function(err){
       if(err) ext.logger.error("Error undefining amd", err);
     });
     */
