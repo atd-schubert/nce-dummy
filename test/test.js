@@ -18,11 +18,11 @@ describe('Basic functions in NCE', function(){
   extMgr.activateExtension(extMgr);
   
   it('should be installable', function(done){
-    if(extMgr.installExtension(ext)) return done();
+    if(extMgr.installExtension(ext) && ext.status === "installed") return done();
     return done(new Error("Can not install extension"));
   });
   it('should be activatable', function(done){
-    if(extMgr.activateExtension(ext)) return done();
+    if(extMgr.activateExtension(ext) && ext.status === "activated") return done();
     return done(new Error("Can not activate extension"));
   });
   it('should be deactivatable', function(done){
