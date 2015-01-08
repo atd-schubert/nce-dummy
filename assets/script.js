@@ -1,0 +1,3 @@
+define([], "dummy", function(){
+  // your dummy code here...
+});
