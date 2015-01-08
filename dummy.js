@@ -46,7 +46,6 @@ module.exports = function(nce){
       if(err) ext.logger.error("Error defining amd", err);
     });
     */
-    checkAuthentication = function(req, res, authCb, unauthCb, opts)
   });
   
   ext.on("uninstall", function(event){ // undo installation
