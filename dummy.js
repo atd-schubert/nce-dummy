@@ -85,7 +85,7 @@ module.exports = function(nce){
   });
   
 //# Private declarations:
-  var router = function(req, res, next){
+  var router = function dummy(req, res, next){
     if(req.url.substr(0, backend.config.route.length+ext.config.subRoute.length) === backend.config.route+ext.config.subRoute) {
       try{throw new Error("Dummy extension");} catch(e){console.error(e)};
 
