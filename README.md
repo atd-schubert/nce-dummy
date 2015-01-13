@@ -21,9 +21,9 @@ var dummy = extMgr.getActivatedExtension("dummy");
 ### Config settings
 You are able to use the following [config-settings](https://github.com/atd-schubert/node-nce/wiki/Extension-Class#configuration) with their defaults:
 
-    * `route: "/dummy"`: Sub-URL to listen
-    * `dumpPath: process.cwd() + "/dummy"`: Directory to dump files
-    * `logger: {}`: Settings for [logger-extension](https://github.com/atd-schubert/nce-winston)
+* `route: "/dummy"`: Sub-URL to listen
+* `dumpPath: process.cwd() + "/dummy"`: Directory to dump files
+* `logger: {}`: Settings for [logger-extension](https://github.com/atd-schubert/nce-winston)
 
 ### Basic methods
 #### ext.dummy(name, cb, opts)
