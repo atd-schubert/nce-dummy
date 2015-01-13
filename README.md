@@ -7,7 +7,7 @@ This is an nce extension for [dummy](https://dummy/---------).
 ## How to install
 Install with npm: `npm install --save nce-dummy`
 
-Integrate in NCE with the [extension-manager](https://www.npmjs.com/package/nce-extension-manager):
+Integrate in NCE with the [extension-manager](https://github.com/atd-schubert/nce-extension-manager):
 
 ```
 var NCE = require("nce");
