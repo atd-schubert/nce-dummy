@@ -19,7 +19,7 @@ var dummy = extMgr.getActivatedExtension("dummy");
 
 ## How to use
 ### Config settings
-You are able to use the following [config-settings](https://github.com/atd-schubert/node-nce/wiki/Extension-Class#configuration) with their defaults:
+You are able to use the following [config-settings](https://github.com/atd-schubert/node-nce/wiki/Extension-Class#configuration) (listed with their defaults):
 
 * `route: "/dummy"`: Sub-URL to listen
 * `dumpPath: process.cwd() + "/dummy"`: Directory to dump files
