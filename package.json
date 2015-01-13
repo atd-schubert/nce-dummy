@@ -27,7 +27,7 @@
   "devDependencies": {
     "nce":">=0.1.0",
     "nce-winston":">=0.0.2",
-    "nce-extension-manager":">=0.0.2"
+    "nce-extension-manager":">=0.0.1"
   },
   "peerDependencies": {
     "nce":">=0.1.0",
