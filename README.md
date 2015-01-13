@@ -1,4 +1,4 @@
-* ! This is just a dummy for a README.md ! *
+*! This is just a dummy for a README.md !*
 
 # dummy extension for NCE
 ## Description
