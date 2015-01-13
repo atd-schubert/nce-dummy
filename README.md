@@ -31,7 +31,7 @@ Dummy method.
 
 ##### Arguments
 1. `name`[String]:
-1. `cb`[Function]: callback-function with the arguments:
+1. `cb`[Function]: Callback-function with the arguments:
     1. `error`[Error]: Used for exceptions
     1. `data`[Buffer]: Dummy-Data
     1. `result`[Object]: Result of the query
